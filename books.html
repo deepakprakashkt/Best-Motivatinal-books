@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivational Book Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Merriweather', serif;
+        }
+
+        body {
+            background-color: #f7f1e3;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #5A3825;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar h1 {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+            background-color: #04AA6D;
+            border-radius: 5px;
+            padding: 10px 20px;
+            border: none;
+            
+        }
+
+        /* Responsive Navbar */
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Library Section */
+        .library {
+            max-width: 1200px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .library h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #5A3825;
+        }
+
+        .books {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            
+        }
+
+        .book {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        
+            
+        }
+        .book a {
+    text-decoration: none; /* Remove text decoration */
+}
+
+        .book:hover {
+            transform: scale(1.05);
+        }
+
+        .book img {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            
+        }
+
+        .book h3 {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #5A3825;
+        }
+
+        .book p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .active{
+            background-color: #04AA6D;
+            border-radius: 5px;
+            padding: 10px 20px;
+            border: none;
+            
+        }
+
+
+/* Contact Section */
+.contact {
+    max-width: 600px; /* Set max-width for better layout on larger screens */
+    margin: 0 auto; /* Centers the form horizontally */
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #5A3825;
+}
+
+.contact p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    width: 100%; /* Make the form full width */
+}
+
+form input,
+form textarea {
+    width: 100%; /* Make the input fields and textarea take full width */
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding does not affect the width */
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background-color: #eae20b;
+}
+
+/* Mobile Responsive - Adjust form input width */
+@media (max-width: 768px) {
+    .contact {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    form input,
+    form textarea {
+        width: 100%;
+        padding: 10px;
+    }
+
+    form button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+
+
+
+
+
+        /* Footer */
+        .footer {
+            background: #5A3825;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1rem;
+            margin-top: 40px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background-color: #5A3825;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 10px;
+            }
+
+            .books {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>Motivational Books Store</h1>
+        <span class="menu-icon" onclick="document.querySelector('.nav-links').classList.toggle('active');">&#9776;</span>
+        <ul class="nav-links">
+            <li><a href="./index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a  class="active" href="#"><i class="fa-solid fa-book"></i> Books</a></li>
+            <!-- <li><a href="#"><i class="fa-solid fa-user"></i> About</a></li> -->
+            <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+            <li><a href="./index-sign.html"><i class="fas fa-sign-out"></i></i>Log-Out</a></li>
+        </ul>
+    </nav>
+
+    <!-- Library Section -->
+    <section class="library">
+        <h2>Explore Our Motivational Books </h2>
+        <div class="books">
+            
+
+            <div class="book">
+                <a href="./apj.html"><img src="./img/apj_bookimg.jpg" alt="Think and Grow Rich"></a>
+                <h3>Learning How TO Fly</h3>
+                <p>By Apj Abdul Kalam</p>
+            </div>
+            <div class="book">
+               <a href="./ratan.html"> <img src="./img/ratan_tata.webp" alt="The Subtle Art"></a>
+                <h3>Success Principles of Ratan Tata</h3>
+                <p>By Ratan Tata</p>
+            </div>
+            <div class="book">
+               <a href="./the 7 habbit.html"><img src="https://m.media-amazon.com/images/I/81tEgsxpNZS.jpg" alt="The 7 Habits"></a>
+                <h3>The 7 Habits</h3>
+                <p>By Stephen R. Covey</p>
+            </div>
+            <div class="book">
+               <a href="./psycho.html"> <img src="https://m.media-amazon.com/images/I/71g2ednj0JL.jpg" alt="The Power of Now"></a>
+                <h3>The Power of Now</h3>
+                <p>By Eckhart Tolle</p>
+            </div>
+            <div class="book">
+               <a href="./thin_and_grow.html"> <img src="https://m.media-amazon.com/images/I/81GqtNbs+PL.jpg" alt="Think and Grow Rich"></a>
+                <h3>Think and Grow Rich</h3>
+                <p>By Napoleon Hill</p>
+            </div>
+            <div class="book">
+               <a href="./awaken.html"> <img src="./img/Awaken-the.jpg" alt="Awaken the Giant"></a>
+                <h3>Awaken the Giant</h3>
+                <p>By Tony Robbins</p>
+            </div>
+            <div class="book">
+               <a href="./not giving_fuck.html"> <img src="https://m.media-amazon.com/images/I/71t4GuxLCuL.jpg" alt="The Subtle Art"></a>
+                <h3>The Subtle Art</h3>
+                <p>By Mark Manson</p>
+            </div>
+            <div class="book">
+               <a href="./cant_hurt.html"> <img src="./img/cant_heart.jpg" alt="Can't Hurt Me"></a>
+                <h3>Can't Hurt Me</h3>
+                <p>By David Goggins</p>
+            </div>
+
+           
+            <div class="book">
+               <a href="./positive.html"> <img src="./img/positive_ati.jpg" alt="By Roger Fritz"></a>
+                <h3>The Power of Positive Attitude</h3>
+                <p>By Roger Fritz</p>
+            </div>
+            
+            <div class="book">
+               <a href="./what-think.html"> <img src="./img/what_think-img.jpg" alt="You Become what you think"></a>
+                <h3>You Become what you think</h3>
+                <p>By Shubham Kumar Singh</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="contact" id="contact">
+        <h2>Get in Touch</h2>
+        <p>Have any questions or suggestions? Feel free to contact us!</p>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+        </form>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Thank you for visit my Motivational Books Store. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

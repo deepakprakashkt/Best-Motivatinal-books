@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratan Tata - Life Story</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Playfair+Display&display=swap');
+        
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        /* Body */
+        body {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(30, 42, 71, 0.85);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            position: relative;
+            
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        /* Button Styles */
+        .home-btn, .book-btn {
+            position: absolute;
+            top: 20px;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .home-btn {
+            right: 20px;
+            background-color: #ff6f61;
+        }
+
+        .book-btn {
+            left: 20px;
+            background-color: #04AA6D;
+        }
+
+        .book-btn:hover {
+            background-color: #e25e4c;
+            transform: scale(1.1);
+        }
+        .home-btn:hover{
+            background-color: #16d442;
+            transform: scale(1.1);
+            
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 15px;
+            text-align: center;
+        }
+
+        /* Image and Story Layout */
+        .content-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        /* Image Styles */
+        .main-img {
+            width: 50%;
+            max-width: 500px;
+            display: block;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .main-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Story Section */
+        .story {
+            background-color: #fff;
+            color: #333;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .story h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1E2A47;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .story p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Quote Section */
+        .quote {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .quote h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1E2A47;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .quote blockquote {
+            font-size: 1.5rem;
+            color: #444;
+            border-left: 5px solid #1E2A47;
+            padding-left: 25px;
+            margin-left: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1E2A47;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .main-img {
+                width: 70%;
+            }
+
+            .story {
+                width: 80%;
+            }
+
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .home-btn, .book-btn {
+                padding: 8px 20px;
+                font-size: 1rem;
+            }
+
+            .story h2 {
+                font-size: 2rem;
+            }
+
+            .quote h2 {
+                font-size: 2rem;
+            }
+
+            .main-img {
+                max-width: 90%;
+            }
+
+            .story {
+                width: 90%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Ratan Tata</h1>
+        <p>India's Renowned Business Tycoon</p>
+
+        <!-- Go to Book-Store Button on Left -->
+        <a href="./books.html" class="book-btn">Go To Book-Store👈</a>
+
+        <!-- Go to Home Button on Right -->
+        <a href="./index.html" class="home-btn">Go to Home</a>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="content-wrapper">
+            <!-- Image of Ratan Tata -->
+            <img src="./img/ratan_tata.webp" alt="Ratan Tata" class="main-img">
+            
+            <!-- Story Section -->
+            <section class="story">
+                <h2>Life Story</h2>
+                <p>
+                    Ratan Tata was born on December 28, 1937, in Bombay (now Mumbai), India. He is a prominent Indian industrialist, philanthropist, and the former chairman of Tata Sons, the holding company of the Tata Group. Under his leadership, the Tata Group expanded its footprint globally, acquiring prestigious brands such as Jaguar Land Rover and Corus Steel.
+                </p>
+                <p>
+                    Ratan Tata is known for his leadership qualities, vision, and his commitment to corporate social responsibility. He has been instrumental in transforming the Tata Group into a global conglomerate, focusing on innovation, sustainability, and ethical business practices.
+                </p>
+                <p>
+                    He believes in the philosophy that "Take the stones people throw at you, and use them to build a monument." His contributions to India’s economic and industrial development have earned him numerous accolades and awards, making him one of the most respected business leaders in the world.
+                </p>
+            </section>
+        </div>
+
+        <section class="quote">
+            <h2>Quotation</h2>
+            <blockquote>
+                "I don’t believe in taking right decisions. I take decisions and make them right."
+            </blockquote>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 | Ratan Tata's Inspirational Life Story</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivational Contact Page</title>
+    
+    <style>
+        
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #5A3825;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        nav .contact-details {
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        nav .contact-details i {
+            margin-right: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 20px;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+            background-color: #04AA6D;
+            color: #ff6f61;
+            border-radius: 5px;
+            padding: 10px 20px;
+            border: none;
+        }
+
+
+        .active {
+            background-color: #04AA6D;
+            border-radius: 5px;
+            padding: 10px 20px;
+            border: none;
+            
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1{
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #0fb117;
+
+        }
+
+        .main-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #5A3825;
+        }
+
+        .main-content p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-bottom: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+         /* Updated Form Container with Form Shadow */
+.form-container form {
+    box-shadow: 0 6px 12px rgba(228, 125, 7, 0.1); /* Added shadow to form */
+    padding: 20px;
+    background-color: #28e13a;
+    border-radius: 8px;
+}
+
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-container button {
+            padding: 12px;
+            background-color: #5A3825;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .form-container button:hover {
+            background-color: #FFD700;
+        }
+
+        footer {
+            background-color: #5A3825;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav .contact-details {
+                margin-bottom: 10px;
+                font-size: 0.9rem;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <!-- Contact Details on Left -->
+        <div class="contact-details">
+            <i class="fa-solid fa-phone-alt"></i> <span>(+91)912847xxxx</span> | 
+            <i class="fa-solid fa-envelope"></i> <span>deepak@motivational.com</span>
+        </div>
+        <!-- Navbar Links -->
+        <div>
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a class="active" href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Welcome To My Mootivational Store</h1>
+        <h2>Stay Motivated, Stay Focused!</h2>
+        <p>We believe in the power of words. Our goal is to provide you with the tools to inspire and motivate yourself each day. Reach out to us if you have any questions or need any support.</p>
+
+        <div class="form-container">
+            <h2>Contact Us</h2>
+            <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Motivational Company. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

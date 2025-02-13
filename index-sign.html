@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #021B79, #0575E6);
+            padding: 20px;
+            color: white;
+            background: url('./img/bg2_img.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            width: 100%;
+            /* background-color: rgba(0, 0, 0, 0.7); */
+            background: linear-gradient(234deg, #05c338, #2707da);
+
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ff5263;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff758c;
+            background-color: #04AA6D;
+            border-radius: 5px;
+            padding: 10px 20px;
+            border: none;
+        }
+        .active {
+            background-color: #04AA6D;
+            border-radius: 5px;
+            padding: 7px 15px;
+            border: none;
+            
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 100px; /* Offset for header */
+        }
+
+        .left {
+            flex: 1;
+            /* background: rgba(238, 153, 153, 0.5); */
+            background: linear-gradient(234deg, #ff7f50, #1e90ff);
+            border-radius: 7px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .left h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .social-icons i {
+            font-size: 1.8em;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .social-icons i:hover {
+            color: #2623f9;
+        }
+
+        .right {
+            flex: 1;
+            /* background: rgba(255, 255, 255, 0.2); */
+            background: linear-gradient(234deg, #06c55b, #1e90ff);
+            border-radius: 7px;
+            padding: 40px;
+            text-align: center;
+            border-left: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 12px;
+            padding-left: 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.3);
+            color: #f0e5e5;
+            outline: none;
+        }
+
+        .input-box input::placeholder {
+            color: rgba(200, 18, 18, 0.8);
+        }
+
+        .input-box i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgb(194, 18, 132);
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .options label {
+            cursor: pointer;
+        }
+
+        .options a {
+            color: rgb(250, 5, 5);
+            text-decoration: none;
+        }
+
+        .options a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #ff5263;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff3b50;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #1e0256;
+            font-weight: bold;
+            font-size: 20px;
+            text-shadow: #ff758c;
+        }
+
+        p a {
+            color: #ff3b50;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Toggle Forms */
+        .signup-form {
+            display: none;
+        }
+
+        #signup-toggle:checked ~ .signup-form {
+            display: block;
+        }
+
+        #signup-toggle:checked ~ .login-form {
+            display: none;
+        }
+
+        /* Hide checkbox */
+        #signup-toggle {
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            /* background: #03ad67; */
+            background: linear-gradient(234deg, #e06807, #04c638);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            font-size: 1em;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .right {
+                border-left: none;
+                border-top: 2px solid rgba(255, 255, 255, 0.3);
+            }
+
+            nav a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">MyWebsite</div>
+        <nav>
+            <a  class="active"   "./index-sign.html">Home</a>
+            <a href="./log-about.html">About</a>
+            <a href="./contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Left Section -->
+        <div class="left">
+            <h1>Welcome!</h1>
+            <p>To Our Motivational Website.</p>
+            <p>If You Want to Read it,You will have to <mark>log-in</mark>.</p>
+            <div class="social-icons">
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+        </div>
+
+        <!-- Right Section (Login & Signup forms) -->
+        <div class="right">
+            <input type="checkbox" id="signup-toggle">
+
+            <!-- Login Form -->
+            <div class="login-form">
+                <h2>Sign In</h2>
+                <form action="./index.html">
+                    <div class="input-box">
+                        <input type="email" name="email" required placeholder="➤Email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" name="password" required placeholder="➤Password">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="options">
+                        <label><input type="checkbox"> Remember me</label>
+                        <a href="#">➤Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn">➤Sign In</button>
+                    <p>Don't have an account? <label for="signup-toggle">➤Sign up</label></p>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="signup-form">
+                <h2>Sign Up</h2>
+                <form action="./index.html">
+                    <div class="input-box">
+                        <input type="text" name="username" required placeholder="➤Username">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" name="email" required placeholder="➤Email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" name="password" required placeholder="➤Password">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <button type="submit" class="btn">➤Sign Up</button>
+                    <p>Already have an account? <label for="signup-toggle">➤Login</label></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Thank you for visiting my page!</p>
+    </footer>
+</body>
+</html>

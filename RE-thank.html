@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Review</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #2a9d8f, #264653);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+            perspective: 1500px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            color: #f1faee;
+            margin-bottom: 20px;
+            transform: translateZ(50px);
+            animation: rotateIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #e9c46a;
+            animation: popIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotateIn {
+            0% {
+                transform: rotateX(90deg);
+                opacity: 0;
+            }
+            100% {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 1.2em;
+            color: #ddd;
+            animation: fadeIn 3s ease-in-out;
+        }
+         
+            
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Thank You for Your Review!</h1>
+        <p>Your feedback is valuable to us. We appreciate your time and effort in sharing your thoughts.</p>
+    </div>
+         <!-- <li><a href="./index-sign.html"><i class="fas fa-sign-out"></i></i>Log-Out</a></li> -->
+    <footer>
+        <p>&copy; 2025 @BEST MOTIVATIONAL BOOKS</p>
+    </footer>
+
+</body>
+</html>

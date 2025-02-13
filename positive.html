@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Power of a Positive Attitude</title>
+    <style>
+        /* Reset some basic default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            width: 100%; /* Ensure the header spans the full width of the page */
+            position: relative;
+        }
+        header a{
+            margin-top: 50px;
+        }
+
+        /* Back and Home buttons styling */
+        .back-btn, .home-btn {
+            position: absolute;
+            top: 20px;
+            background-color: #07bc3d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .back-btn {
+            left: 20px;
+        }
+
+        .home-btn {
+            right: 20px;
+        }
+
+        .back-btn:hover, .home-btn:hover {
+            background-color: #18add6;
+        }
+
+        /* Header Text and Image Styling */
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        .author-img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-top: 10px;
+        }
+
+        /* Section styling */
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* List styling for principles */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            background-color: #ecf0f1;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+
+        li strong {
+            color: #34495e;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        /* Media Queries for Responsiveness */
+
+        /* For tablets and smaller devices (below 768px) */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .author-img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .back-btn, .home-btn {
+                padding: 8px 12px;
+                font-size: 10px;
+            }
+
+            ul li {
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            .back-btn, .home-btn {
+                font-size: 10px;
+            }
+        }
+
+        /* For smaller screens, such as mobile phones (below 480px) */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            header p {
+                font-size: 14px;
+            }
+
+            .author-img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .back-btn, .home-btn {
+                padding: 8px 10px;
+                font-size: 10px;
+            }
+
+            ul li {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .back-btn, .home-btn {
+                font-size: 8px;
+            }
+        }
+
+        /* For very small screens (portrait mobile view) */
+        @media (max-width: 360px) {
+            .back-btn, .home-btn {
+                padding: 6px 8px;
+                font-size: 8px;
+            }
+
+            header h1 {
+                font-size: 22px;
+            }
+
+            header p {
+                font-size: 12px;
+            }
+
+            .author-img {
+                width: 70px;
+                height: 70px;
+            }
+
+            ul li {
+                padding: 8px;
+                font-size: 12px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Back and Home buttons -->
+        <a href="./books.html" class="back-btn">Previous</a>
+        <a href="./index.html" class="home-btn">Home👈</a>
+
+        <h1>The Power of a Positive Attitude</h1>
+        <p>Embracing Optimism for Success</p>
+        <!-- Author Image -->
+        <img class="author-img" src="./img/positive_ati.jpg" alt="Positive Attitude Image">
+    </header>
+
+    <section class="intro">
+        <h2>Introduction</h2>
+        <p>"The Power of a Positive Attitude" is a book and philosophy centered around the transformative effects of optimism on personal growth, happiness, and success. It emphasizes the importance of maintaining a positive mindset, even in the face of challenges, and how it can influence every aspect of life. By adopting a positive attitude, individuals can unlock their potential and achieve success in ways they may never have imagined. The book teaches that our thoughts shape our actions, and with the right mindset, anything is possible.</p>
+    </section>
+
+    <section class="principles">
+        <h2>Key Principles of Positive Thinking</h2>
+        <ul>
+            <li><strong>The Power of Optimism:</strong> Maintaining a hopeful outlook is the foundation of success. A positive attitude helps us to see opportunities where others see obstacles.</li>
+            <li><strong>Believe in Yourself:</strong> Confidence and self-belief are critical in manifesting your goals. When you truly believe in your abilities, you take action that leads to achievement.</li>
+            <li><strong>Gratitude:</strong> Focusing on the good in life rather than the negatives shifts your energy and creates a life filled with abundance.</li>
+            <li><strong>Visualization:</strong> Imagining success and focusing on your end goals enhances motivation, clarity, and your ability to achieve what you set out to do.</li>
+            <li><strong>Positive Self-Talk:</strong> Replace negative thoughts with empowering affirmations. This mental shift can dramatically change the course of your life.</li>
+            <li><strong>Resilience in the Face of Adversity:</strong> When you encounter obstacles, viewing them as learning experiences rather than setbacks can help you push through with greater strength.</li>
+            <li><strong>Surround Yourself with Positivity:</strong> The people and environment you surround yourself with directly influence your mindset. Build a network of supportive, positive individuals.</li>
+            <li><strong>Embrace Failure as Growth:</strong> Failures are simply stepping stones to success. A positive attitude toward failure turns challenges into learning opportunities.</li>
+            <li><strong>Live in the Present Moment:</strong> Focusing on the present and appreciating the journey allows you to maintain a positive attitude and avoid being weighed down by past regrets or future worries.</li>
+            <li><strong>Affirmations:</strong> Use affirmations to create a powerful mindset that attracts positivity and success. Repeating positive statements can reprogram your mind for success.</li>
+            <li><strong>Determination and Perseverance:</strong> Staying determined and persistent in the pursuit of your dreams, no matter the challenges, leads to success and personal growth.</li>
+            <li><strong>Kindness and Compassion:</strong> Helping others and practicing kindness enhances your own mental well-being and cultivates a positive atmosphere around you.</li>
+            <li><strong>Emotional Control:</strong> A positive attitude involves mastering your emotions, staying calm in adversity, and not letting negativity dictate your actions.</li>
+        </ul>
+    </section>
+
+    <section class="conclusion">
+        <h2>Conclusion</h2>
+        <p>The power of a positive attitude is one of the most influential forces in life. By choosing to stay optimistic, focused, and confident, you can overcome any challenge and achieve your greatest dreams. A positive mindset not only shapes your personal and professional success, but it can also enrich your relationships and overall happiness. Adopting this attitude is a lifelong journey, but it’s one that has the power to transform your life in extraordinary ways.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 The Power of a Positive Attitude Review</p>
+    </footer>
+</body>
+</html>

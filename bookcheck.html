@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Motivational Books</title>
+    <style>
+        /* General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #f5deb3; /* Cream color */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em 2em;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        /* Hide default checkbox */
+        #menu-toggle {
+            display: none;
+        }
+
+        /* Mobile Menu Button */
+        .menu-btn {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        /* Nav Links */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            transition: max-height 0.3s ease;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #666;
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: #f5deb3;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                text-align: center;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            #menu-toggle:checked ~ .nav-links {
+                max-height: 300px;
+                padding-bottom: 10px;
+            }
+
+            .nav-links a {
+                padding: 10px 0;
+            }
+        }
+
+        /* Login Button */
+        .login-btn {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .login-btn:hover {
+            background: #555;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(to bottom, #333, #555);
+            color: #fff;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+        }
+
+        .header p {
+            margin: 10px 0;
+        }
+
+        .explore-btn {
+            background: #ff4500;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .explore-btn:hover {
+            background: #ff6347;
+        }
+
+        /* Books Section */
+        .books, .authors, .contact {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .book-container, .author-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .book, .author {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+
+        .book img, .author img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Contact Form */
+        form input,
+        form textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        form button:hover {
+            background: #555;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Best Motivational Books</div>
+        <label for="menu-toggle" class="menu-btn">&#9776;</label>
+        <input type="checkbox" id="menu-toggle">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#books">Books</a></li>
+            <li><a href="#authors">Authors</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="login-btn">Login</button>
+    </nav>
+
+    <header class="header" id="home">
+        <h1>Best Motivational Books</h1>
+        <p>Get inspired and motivated with our collection of best motivational books</p>
+        <button class="explore-btn">Explore Now</button>
+    </header>
+
+    <section class="books" id="books">
+        <h2>Our Top Picks</h2>
+        <div class="book-container">
+            <div class="book">
+                <img src="./img/atomic habbits.jpg" alt="atomic Habbits">
+                <h3>By Stephen R. Covey</h3>
+                <p>This is a brief description of book 1</p>
+            </div>
+            <div class="book">
+                <img src="book2.jpg" alt="Book 2">
+                <h3>Book 2</h3>
+                <p>This is a brief description of book 2</p>
+            </div>
+            <div class="book">
+                <img src="book3.jpg" alt="Book 3">
+                <h3>Book 3</h3>
+                <p>This is a brief description of book 3</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="authors" id="authors">
+        <h2>Meet Our Authors</h2>
+        <div class="author-container">
+            <div class="author">
+                <img src="author1.jpg" alt="Author 1">
+                <h3>Author 1</h3>
+                <p>This is a brief description of author 1</p>
+            </div>
+            <div class="author">
+                <img src="author2.jpg" alt="Author 2">
+                <h3>Author 2</h3>
+                <p>This is a brief description of author 2</p>
+            </div>
+            <div class="author">
+                <img src="author3.jpg" alt="Author 3">
+                <h3>Author 3</h3>
+                <p>This is a brief description of author 3</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Get in Touch</h2>
+        <p>Have any questions or suggestions? Feel free to contact us!</p>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Best Motivational Books</p>
+    </footer>
+</body>
+</html>

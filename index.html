@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Motivational Books</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #c2bebe;
+            text-align: center;
+            padding-top: 100px; /* Added margin to prevent header overlap */
+            border-radius: 10px;
+            background: url('./img/bgd_img.jpg') center/cover no-repeat;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #f5e1c8; /* Cream Color */
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar h1 {
+            color: #333;
+            font-size: 1.8rem;
+        }
+
+        .active {
+            background-color: #04AA6D;
+            border-radius: 5px;
+            padding: 10px 20px;
+            border: none;
+            
+        }
+
+        /* Hide Checkbox */
+        #menu-toggle {
+            display: none;
+        }
+
+        /* Hamburger Icon */
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #333;
+        }
+
+        /* Navbar Links */
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+            
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: 0.3s;
+
+
+        }
+
+        .nav-links a:hover {
+            background-color: #04AA6D;
+            color: #ff6f61;
+            border-radius: 5px;
+            padding: 10px 20px;
+            border: none;
+        }
+
+        /* Login Button */
+        .login-btn {
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+            
+        }
+
+        .login-btn:hover {
+            background-color: #2e99eb;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            
+            .navbar h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Show hamburger icon */
+            .menu-icon {
+                display: block;
+            }
+
+            /* Initially hide nav links */
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background-color: #f5e1c8;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            /* Show menu when checkbox is checked */
+            #menu-toggle:checked ~ .nav-links {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+                padding: 10px;
+            }
+        }
+
+        /* Header */
+        header {
+            background-color: #ff6f61;
+            color: white;
+            padding: 100px 20px 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1;
+            
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+        
+
+
+        .books {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+            padding-top: 60px; /* Added padding to prevent books from being hidden behind the header */
+        }
+
+        .book {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 15px;
+            width: 250px;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .book:hover {
+            transform: scale(1.05);
+        }
+
+        .book img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .book a{
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .book p {
+            color: #666;
+            font-size: 1rem;
+        }
+        .imp{
+            font-size: 20px;
+            font-weight: bold;
+            color: #d5071c;
+            background-color: #11e96f;
+        }
+
+        /* Video Section */
+
+        .video-section1{
+            margin: 40px 0;
+            padding: 20px;
+            padding-top: 150px;
+            background: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            
+        }
+
+        .video-section1 h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+
+
+
+        .video-section {
+            margin: 40px 0;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .video-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        
+        }
+
+        .footer a {
+            color: #ff6f61;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+
+        h3 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Ordered List Styling */
+    ol {
+        list-style-type: decimal;
+        margin: 20px 0;
+        padding: 0;
+        font-size: 1.2rem;
+        color: #333;
+    }
+
+    ol li {
+        background-color: #fff;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    ol li:hover {
+        transform: translateX(10px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Review Section */
+    .review-section {
+            margin: 50px 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .review-section textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            resize: none;
+        }
+
+        .review-section button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #04AA6D;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .review-section button:hover {
+            background-color: #2e99eb;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>Best Motivational Books</h1>
+
+        <!-- Hidden Checkbox for Mobile Menu -->
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <ul class="nav-links">
+            <li><a class="active" href="#Home"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="./books.html"><i class="fa-solid fa-book"></i> Books</a></li>
+            <li><a href="./library.html"><i class="fas fa-book-open-reader"></i> Library</a></li>
+            <li><a href="./about.html"><i class="fa-solid fa-user"></i> About</a></li>
+            <li><a href="#review"><i class="fas fa-thumbs-up"></i>Reviews</a></li>
+            <li><a href="./contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+            <li><a href="./index-sign.html"><i class="fas fa-sign-out"></i></i>Log-Out</a></li>
+        </ul>
+
+       <!-- <a href="./sign_in.html"> <button class="login-btn">Login</button></a> -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Best Motivational Books</h1>
+        <p>Transform Your Life with These Inspiring </p>
+    </header>
+    
+
+<!-- Video Section -->
+<section class="video-section1">
+    <h2>Watch This Motivational Video</h2>
+    <video controls autoplay >
+        <source src="./video/Best Motivational Vide Inspirational Speech By Deepak Daiya.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</section>
+
+
+
+    <!-- Books Section -->
+    <section class="books">
+        <div class="book">
+           <a href="./apj.html"> <img src="./img/apj_bookimg.jpg" alt="Book 1">
+                <h3>Learning How TO Fly</h3>
+                <p>By Apj Abdul Kalam</p></a>
+        </div>
+
+        <div class="book">
+           <a href="./psycho.html"> <img src="https://m.media-amazon.com/images/I/71g2ednj0JL.jpg" alt="The Power of Now"></a>
+            <h2>The Power of Now</h2>
+            <p>By Eckhart Tolle</p>
+        </div>
+
+        <div class="book">
+           <a href="./the 7 habbit.html"> <img src="https://m.media-amazon.com/images/I/81tEgsxpNZS.jpg" alt="The 7 Habits of Highly Effective People">
+            <h2>The 7 Habits of Highly Effective People</h2>
+            <p>By Stephen R. Covey</p></a>
+        </div>
+
+        <div class="book">
+           <a href="./thin_and_grow.html"> <img src="https://m.media-amazon.com/images/I/81GqtNbs+PL.jpg" alt="Think and Grow Rich">
+            <h2>Think and Grow Rich</h2>
+            <p>By Napoleon Hill</p></a>
+        </div>
+
+        <div class="book">
+           <a href="./not giving_fuck.html"> <img src="https://m.media-amazon.com/images/I/71t4GuxLCuL.jpg" alt="The Subtle Art of Not Giving a F*ck">
+            <h2>The Subtle Art of Not Giving a F*ck</h2>
+            <p>By Mark Manson</p></a>
+        </div>
+    </section>
+
+<h2 class="imp">
+   <p> Here are some of the best motivational books that can inspire and drive you toward achieving your personal and professional goals:</p>
+</h2>
+
+    
+<section class="video-section">
+    <h2>Watch This Motivational Video</h2>
+    <video controls>
+        <source src="./video/POWERFUL MOTIVATIOn Quotes.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</section>
+
+
+
+
+<h3>Best Motivational Books</h3>
+
+<ol>
+    <li>"Atomic Habits" by James Clear</li>
+    <li>"The Power of Now" by Eckhart Tolle</li>
+    <li>"The 7 Habits of Highly Effective People" by Stephen R. Covey</li>
+    <li>"Think and Grow Rich" by Napoleon Hill</li>
+    <li> "The Subtle Art of Not Giving a F*ck" by Mark Manson</li>
+</ol>
+
+
+
+<!-- <div class="container_contact" id="Contact">
+Have any questions or need assistance? Feel free to reach out to us at:<br>
+Email: deepak.hcpe@gmail.com<br>
+Phone: +91912847XXXX<br> -->
+
+<section class="review-section" id="review">
+    <h2>Leave a Review</h2>
+    <textarea placeholder="Share your thoughts about the book..."></textarea><br>
+   <a href="./RE-thank.html"> <button type="submit">Submit Review</button></a>
+   <a href="./conclusion.html"> <button type="info">Conclusion</button></a>
+</section>
+
+
+
+</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Best Motivational Books. All Rights Reserved.</p>
+        <p>Follow us on:
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </p>
+    </footer>
+
+</body>
+</html>
